@@ -85,6 +85,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.1"
+  fluro:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: f89c58cb19df841c826a4079ee92b93b334d7af1
+      url: "git://github.com/goposse/fluro.git"
+    source: git
+    version: "1.2.2"
   flutter:
     dependency: "direct main"
     description: flutter

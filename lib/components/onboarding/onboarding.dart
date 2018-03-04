@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fluro/fluro.dart';
 
-import './Pager.dart';
+import '../../config/application.dart';
+import '../common/pager.dart';
 
 class Onboarding extends StatelessWidget {
   final String doneText = 'Let\'s go!';
@@ -10,17 +12,19 @@ class Onboarding extends StatelessWidget {
     PageData(title: 'Ready?', description: 'The onboarding is finished, you are now ready to enjoy movies like never before.', image: AssetImage('assets/images/onboarding3.png')),
   ];
 
-  _didPressDone() {
-    debugPrint('Done!');
+  _didPressDone(context) {
+    Application.router.navigateTo(context, '/home', replace: true, transition: TransitionType.fadeIn);
   }
 
   @override
   Widget build(BuildContext context) {
-    final pager = Pager(pages: this.onboardingData, doneText: this.doneText, doneAction: this._didPressDone);
+    final pager = Pager(pages: this.onboardingData, doneText: this.doneText, doneAction: () => this._didPressDone(context));
 
-    return DefaultTabController(
-      length: onboardingData.length,
-      child: pager,
+    return SafeArea(
+      child: DefaultTabController(
+        length: onboardingData.length,
+        child: pager,
+      )
     );
   }
 }
