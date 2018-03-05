@@ -15,13 +15,13 @@ class PageData {
   final AssetImage image;
 }
 
-final titleStyle = TextStyle(
+final _titleStyle = TextStyle(
   color: Colors.white,
   fontFamily: 'Kavoon',
   fontSize: 26.0,
   decoration: TextDecoration.none,
 );
-final descriptionStyle = TextStyle(
+final _descriptionStyle = TextStyle(
   color: Colors.white,
   fontFamily: 'Roboto',
   fontSize: 14.0,
@@ -53,11 +53,11 @@ class _PagerItem extends StatelessWidget {
           flex: 1,
           child: Column(
             children: [
-              Text(this.data.title, style: titleStyle, textAlign: TextAlign.center),
+              Text(this.data.title, style: _titleStyle, textAlign: TextAlign.center),
               Container(
                 margin: const EdgeInsets.only(top: 20.0, bottom: 50.0),
                 padding: const EdgeInsetsDirectional.only(start: 50.0, end: 50.0),
-                child: Text(this.data.description, style: descriptionStyle, textAlign: TextAlign.center),
+                child: Text(this.data.description, style: _descriptionStyle, textAlign: TextAlign.center),
               ),
               doneItem,
             ]

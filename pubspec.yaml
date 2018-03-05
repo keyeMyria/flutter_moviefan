@@ -6,8 +6,10 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.0
+  flutter_image:
+    git: git://github.com/flutter/flutter_image.git
   fluro:
-   git: git://github.com/goposse/fluro.git
+    git: git://github.com/goposse/fluro.git
 
 dev_dependencies:
   flutter_test:
@@ -20,6 +22,7 @@ flutter:
     - assets/images/onboarding1.png
     - assets/images/onboarding2.png
     - assets/images/onboarding3.png
+    - assets/images/filterIcon.png
 
   fonts:
     # https://fonts.google.com/specimen/Kavoon?selection.family=Kavoon

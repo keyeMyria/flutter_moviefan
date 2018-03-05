@@ -4,6 +4,7 @@ import 'package:fluro/fluro.dart';
 import '../../config/application.dart';
 import '../../config/routes.dart';
 import '../onboarding/onboarding.dart';
+import '../home/home.dart';
 
 class MovieFan extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _MovieFanState extends State<MovieFan> {
     return MaterialApp(
       title: 'MovieFan',
       theme: ThemeData.dark(),
-      home: Onboarding(),
+      home: Home(),
     );
   }
 }
