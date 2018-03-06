@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:fluro/fluro.dart';
 
-import './components/app/app.dart';
+import './config/application.dart';
+import './config/routes.dart';
+import './store/store.dart';
+import './app.dart';
 
 void main() {
-  runApp(MovieFan());
+  final router = new Router();
+  Routes.configureRoutes(router);
+  Application.router = router;
+
+  runApp(new MovieFan(store: store));
 }

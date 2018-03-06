@@ -108,6 +108,13 @@ packages:
       url: "git://github.com/flutter/flutter_image.git"
     source: git
     version: "0.0.3"
+  flutter_redux:
+    dependency: "direct main"
+    description:
+      name: flutter_redux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.5"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -281,6 +288,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.28.0"
+  redux:
+    dependency: "direct main"
+    description:
+      name: redux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1"
   shelf:
     dependency: transitive
     description:

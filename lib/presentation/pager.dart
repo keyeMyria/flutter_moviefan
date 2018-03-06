@@ -1,7 +1,7 @@
 import 'package:meta/meta.dart';
 import 'package:flutter/material.dart';
 
-import './roundButton.dart';
+import './round_button.dart';
 
 class PageData {
   const PageData({
@@ -15,13 +15,13 @@ class PageData {
   final AssetImage image;
 }
 
-final _titleStyle = TextStyle(
+final _titleStyle = new TextStyle(
   color: Colors.white,
   fontFamily: 'Kavoon',
   fontSize: 26.0,
   decoration: TextDecoration.none,
 );
-final _descriptionStyle = TextStyle(
+final _descriptionStyle = new TextStyle(
   color: Colors.white,
   fontFamily: 'Roboto',
   fontSize: 14.0,
@@ -39,25 +39,25 @@ class _PagerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return new Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Expanded(
+        new Expanded(
           flex: 2,
-          child: Center(
-            child: Image(image: this.data.image),
+          child: new Center(
+            child: new Image(image: this.data.image),
           ),
         ),
-        Expanded(
+        new Expanded(
           flex: 1,
-          child: Column(
+          child: new Column(
             children: [
-              Text(this.data.title, style: _titleStyle, textAlign: TextAlign.center),
-              Container(
+              new Text(this.data.title, style: _titleStyle, textAlign: TextAlign.center),
+              new Container(
                 margin: const EdgeInsets.only(top: 20.0, bottom: 50.0),
                 padding: const EdgeInsetsDirectional.only(start: 50.0, end: 50.0),
-                child: Text(this.data.description, style: _descriptionStyle, textAlign: TextAlign.center),
+                child: new Text(this.data.description, style: _descriptionStyle, textAlign: TextAlign.center),
               ),
               doneItem,
             ]
@@ -85,23 +85,23 @@ class Pager extends StatelessWidget {
   Widget build(BuildContext context) {
     final TabController controller = DefaultTabController.of(context);
 
-    final doneButton = RoundButton(title: this.doneText, action: this.doneAction);
-    final pageItems = List<Widget>();
+    final doneButton = new RoundButton(title: this.doneText, action: this.doneAction);
+    final pageItems = new List<Widget>();
 
     for (var i = 0; i < this.pages.length; i++) {
       final data = this.pages[i];
-      pageItems.add(_PagerItem(data: data, doneItem: i == this.pages.length - 1 ? doneButton : null));
+      pageItems.add(new _PagerItem(data: data, doneItem: i == this.pages.length - 1 ? doneButton : null));
     }
 
-    return Column(
+    return new Column(
       children: [
-        Expanded(
-          child: TabBarView(
+        new Expanded(
+          child: new TabBarView(
             children: pageItems,
           ),
         ),
-        Container(
-          child: TabPageSelector(
+        new Container(
+          child: new TabPageSelector(
             controller: controller,
             color: Colors.grey,
             selectedColor: Colors.white,

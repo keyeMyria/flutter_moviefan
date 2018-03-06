@@ -1,5 +1,6 @@
 import 'package:meta/meta.dart';
 
+@immutable
 class Movie {
   Movie({
     @required this.title,

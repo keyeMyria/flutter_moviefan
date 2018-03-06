@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-final buttonTextStyle = TextStyle(
+final _buttonTextStyle = new TextStyle(
   color: Colors.white,
   fontFamily: 'Kavoon',
   fontSize: 25.0,
@@ -20,14 +20,14 @@ class RoundButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoButton(
+    return new CupertinoButton(
       padding: const EdgeInsets.only(left: 70.0, right: 70.0),
       minSize: 60.0,
-      borderRadius: BorderRadius.circular(30.0),
+      borderRadius: new BorderRadius.circular(30.0),
       color: Colors.red,
       onPressed: this.action,
       pressedOpacity: 0.4,
-      child: Text(this.title, style: buttonTextStyle)
+      child: new Text(this.title, style: _buttonTextStyle)
     );
   }
 }
