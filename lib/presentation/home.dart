@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
+import '../actions/actions.dart';
 import '../models/models.dart';
 import '../containers/movies_list_container.dart';
+import '../containers/movies_loading_container.dart';
 import './movies_list.dart';
+import './loading_indicator.dart';
 
 final _titleStyle = new TextStyle(
   color: Colors.white,
@@ -62,20 +66,35 @@ class Home extends StatelessWidget {
     );
   }
 
+  Widget _buildMoviesListLoading() {
+    return new MoviesLoadingContainer(
+      builder: (BuildContext context, bool isLoading) {
+        return isLoading
+          ? new LoadingIndicator()
+          : this._buildMoviesList();
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('MovieFan🍿', style: _titleStyle),
-        elevation: 0.0
-      ),
-      body: new Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          this._buildMoviesListHeader(),
-          this._buildMoviesList(),
-        ],
-      ),
+    return new StoreBuilder(
+      onInit: (store) => store.dispatch(new FetchMoviesAction()),
+      builder: (context, store) {
+        return new Scaffold(
+          appBar: new AppBar(
+            title: new Text('MovieFan🍿', style: _titleStyle),
+            elevation: 0.0
+          ),
+          body: new Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              this._buildMoviesListHeader(),
+              this._buildMoviesListLoading(),
+            ],
+          ),
+        );
+      }
     );
   }
 }
