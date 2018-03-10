@@ -53,7 +53,7 @@ class MoviesListItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       new Text(this.data.title, style: _titleStyle),
-                      new Text("${this.data.duration} - ${this.data.genre.join(", ")}", style: _subTitleStyle),
+                      new Text("${this.data.releaseDate} - ${this.data.genres.map((g) => g.name).join(", ")}", style: _subTitleStyle),
                       new Text("Popularity: ${this.data.rating}", style: _subTitleStyle),
                       new Text(this.data.description, maxLines: 4, overflow: TextOverflow.ellipsis, style: _descriptionStyle),
                     ]

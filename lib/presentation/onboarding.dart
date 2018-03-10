@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
-import '../config/application.dart';
+import '../application/application.dart';
 import '../presentation/pager.dart';
 
 class Onboarding extends StatelessWidget {

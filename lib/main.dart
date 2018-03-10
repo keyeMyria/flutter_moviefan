@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
-import './config/application.dart';
-import './config/routes.dart';
+import './application/application.dart';
+import './application/routes.dart';
 import './store/store.dart';
 import './app.dart';
 

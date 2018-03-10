@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 final _titleStyle = new TextStyle(
   color: Colors.white,
@@ -18,9 +17,7 @@ class LoadingIndicator extends StatelessWidget {
         children: [
           new Container(
             margin: new EdgeInsets.all(15.0),
-            child: new CupertinoActivityIndicator(
-              animating: true,
-            ),
+            child: new CircularProgressIndicator()
           ),
           new Text(
             'Loading movies...',
