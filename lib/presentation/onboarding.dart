@@ -13,7 +13,12 @@ class Onboarding extends StatelessWidget {
   ];
 
   _didPressDone(context) {
-    Application.router.navigateTo(context, '/home', replace: true, transition: TransitionType.fadeIn);
+    Application.router.navigateTo(
+      context,
+      '/home',
+      replace: true,
+      transition: TransitionType.fadeIn
+    );
   }
 
   @override

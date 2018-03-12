@@ -7,7 +7,7 @@ import '../models/models.dart';
 final _titleStyle = new TextStyle(
   color: Colors.black,
   fontFamily: 'Roboto',
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.bold,
   fontSize: 17.0,
 );
 final _subTitleStyle = new TextStyle(

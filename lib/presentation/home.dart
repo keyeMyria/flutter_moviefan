@@ -7,6 +7,7 @@ import '../containers/movies_list_container.dart';
 import '../containers/movies_loading_container.dart';
 import './movies_list.dart';
 import './loading_indicator.dart';
+import './advanced_filters.dart';
 
 final _titleStyle = new TextStyle(
   color: Colors.white,
@@ -25,7 +26,13 @@ final _sortStyle = new TextStyle(
 );
 
 class Home extends StatelessWidget {
-  Widget _buildMoviesListHeader() {
+  _didPressAdvancedFilters(context) {
+    showModalBottomSheet(context: context, builder: (BuildContext context) {
+      return new AdvancedFilters();
+    });
+  }
+
+  Widget _buildMoviesListHeader(context) {
     return new Container(
       height: 50.0,
       padding: const EdgeInsets.only(left: 15.0, bottom: 15.0, right: 15.0),
@@ -45,11 +52,14 @@ class Home extends StatelessWidget {
               new Text('Best rated ▾', style: _sortStyle),
             ],
           ),
-          new Image(
-            height: 24.0,
-            width: 24.0,
-            image: new AssetImage('assets/images/filterIcon.png'),
-          )
+          new IconButton(
+            icon: new Image(
+              height: 24.0,
+              width: 24.0,
+              image: new AssetImage('assets/images/filterIcon.png'),
+            ),
+            onPressed: () => this._didPressAdvancedFilters(context),
+          ),
         ],
       ),
     );
@@ -89,7 +99,7 @@ class Home extends StatelessWidget {
           body: new Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              this._buildMoviesListHeader(),
+              this._buildMoviesListHeader(context),
               this._buildMoviesListLoading(),
             ],
           ),
